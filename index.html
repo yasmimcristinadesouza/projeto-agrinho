@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal AgroGado Sustentável - ILPF</title>
+    <!-- Vincula o arquivo de estilos CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <!-- PAINEL DE CONTROLE (Esquerda) -->
+        <div class="control-panel">
+            <h1>AgroGado Sustentável</h1>
+            <p class="subtitle">Simulador de Rotação de Piquetes (Sistema ILPF)</p>
+
+            <div class="input-group">
+                <label>Selecione o período do ano para o manejo:</label>
+                <!-- Botões interativos para trocar os meses -->
+                <div class="btn-grid">
+                    <button class="btn-mes active" data-mes="jan-mar">Jan - Mar (Águas)</button>
+                    <button class="btn-mes" data-mes="apr-jun">Abr - Jun (Transição)</button>
+                    <button class="btn-mes" data-mes="jul-sep">Jul - Set (Seca)</button>
+                    <button class="btn-mes" data-mes="oct-dec">Out - Dez (Renovação)</button>
+                </div>
+            </div>
+
+            <!-- Quadro Informativo de Diagnóstico Técnico -->
+            <div class="info-card">
+                <h3 id="statusTitulo">Período de Águas</h3>
+                <p id="statusDescricao">Carregando informações do ciclo...</p>
+                
+                <div class="metric-list">
+                    <div class="metric-item">
+                        <strong>Status do Solo:</strong><br>
+                        <span id="metricaSolo">Alta Regeneração</span>
+                    </div>
+                    <div class="metric-item" id="blocoNutricao">
+                        <strong>Conforto Animal:</strong><br>
+                        <span id="metricaConforto">Excelente</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAINEL VISUAL DA FAZENDA (Direita) -->
+        <div class="visual-panel">
+            <h2>Mapa de Rotação dos Pastos</h2>
+            <p class="map-subtitle">Veja onde o gado (🐂) está pastando para proteger o solo</p>
+            
+            <!-- Grid simulando os 4 piquetes da fazenda -->
+            <div class="fazenda-grid">
+                <div class="piquete" id="piquete1">
+                    <span class="piquete-nome">Piquete A</span>
+                    <span class="piquete-status" id="statusP1">🌱 Descanso</span>
+                </div>
+                <div class="piquete" id="piquete2">
+                    <span class="piquete-nome">Piquete B</span>
+                    <span class="piquete-status" id="statusP2">🐂 Pastoreio</span>
+                </div>
+                <div class="piquete" id="piquete3">
+                    <span class="piquete-nome">Piquete C (Árvores)</span>
+                    <span class="piquete-status" id="statusP3">🌳 ILPF</span>
+                </div>
+                <div class="piquete" id="piquete4">
+                    <span class="piquete-nome">Piquete D</span>
+                    <span class="piquete-status" id="statusP4">🌾 Lavoura</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Vincula o arquivo de lógica JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
